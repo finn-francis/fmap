@@ -8,6 +8,7 @@ AllCops:
     - spec/spec_helper.rb
     - db/migrate/*
     - bin/*
+    - node_modules/**/*
 
 Layout/LineLength:
   Max: 120
