@@ -9,18 +9,42 @@ import NavMenu from './NavMenu'
 import Dashboard from './dashboard/Index'
 import Targets from './targets/Index'
 
-export default function App() {
-  return (
-    <Router>
-      <div id="wrapper">
-        <NavMenu name="Finn" />
-        <div id="content-wrapper">
-          <Switch>
-            <Route path="/" exact component={Dashboard} />
-            <Route path="/targets" exact component={Targets} />
-          </Switch>
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentUser: { first: 'Guest' }
+    };
+  }
+
+  componentDidMount() {
+    const url = "/api/v1/dashboards"
+    self = this
+    fetch(url)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error("Network response was not ok.");
+      })
+      .then(response => {this.setState({ currentUser: response })})
+      .catch(() => { self.props.history.push("/")});
+  }
+
+  render() {
+    return (
+      <Router>
+        <div id="wrapper">
+          <NavMenu name={this.state.currentUser.firstName} />
+          <div id="content-wrapper">
+            <Switch>
+              <Route path="/" exact component={Dashboard} />
+              <Route path="/targets" exact component={Targets} />
+            </Switch>
+          </div>
         </div>
-      </div>
-    </Router>
-  )
+      </Router>
+    )
+  }
 }
+export default App
