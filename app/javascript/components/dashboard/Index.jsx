@@ -3,7 +3,9 @@ import React from 'react'
 class Index extends React.Component {
   render() {
     return (
-      <h1>I am your dashboard!</h1>
+      <div className='targets jumbotron'>
+        <h2>I am your dashboard</h2>
+      </div>
     )
   }
 }
