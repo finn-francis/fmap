@@ -7,6 +7,7 @@ ruby '2.6.5'
 
 gem 'jbuilder', '~> 2.7'
 gem 'pg', '>= 0.18', '< 2.0'
+gem 'pry-rails'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 6.0.0'
 gem 'sass-rails', '~> 5'
@@ -21,7 +22,7 @@ gem 'webpacker', '~> 4.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'pry-byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rubocop'
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
