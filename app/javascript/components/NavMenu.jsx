@@ -11,6 +11,9 @@ const NavMenu = props => (
       <Link to='/' role='button' className='nav-link'>Home</Link>
     </li>
     <li className="nav-item">
+      <Link to='/companies' role='button' className='nav-link'>Companies</Link>
+    </li>
+    <li className="nav-item">
       <Link to='/targets' role='button' className='nav-link'>Targets</Link>
     </li>
     <hr className="sidebar-divider my-0"></hr>

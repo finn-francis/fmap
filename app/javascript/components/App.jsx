@@ -7,13 +7,15 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import NavMenu from './NavMenu'
 import Dashboard from './dashboard/Index'
+import Companies from './companies/Index'
+import Company from './companies/Show'
 import Targets from './targets/Index'
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentUser: { first: 'Guest' }
+      currentUser: { firstName: 'Guest' }
     };
   }
 
@@ -39,6 +41,8 @@ class App extends React.Component {
           <div id="content-wrapper">
             <Switch>
               <Route path="/" exact component={Dashboard} />
+              <Route path="/companies" exact component={Companies} />
+              <Route path="/companies/:id" exact component={Company} />
               <Route path="/targets" exact component={Targets} />
             </Switch>
           </div>
