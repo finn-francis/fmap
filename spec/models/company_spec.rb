@@ -10,6 +10,7 @@ RSpec.describe Company, type: :model do
 
   describe 'relations' do
     it { is_expected.to(have_many(:children)) }
+    it { is_expected.to(have_many(:domains)) }
     it { is_expected.to(belong_to(:parent)) }
   end
 end

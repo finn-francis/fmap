@@ -10,7 +10,9 @@
 
 default = User.find_or_create_by(email: 'finnfrancis123@gmail.com', first_name: 'Finn', last_name: 'Francis')
 
-Company.find_or_create_by(name: 'PHARMASEAL', user_id: default.id)
+pharmaseal = Company.find_or_create_by(name: 'PHARMASEAL', user_id: default.id)
+pharmaseal.domains.find_or_create_by(name: 'pharmaseal.net', description: 'Application domain')
+pharmaseal.domains.find_or_create_by(name: 'pharmaseal.com', description: 'Website')
 
 unilever = Company.find_or_create_by(name: 'UNILEVER', user_id: default.id)
 Company.find_or_create_by(name: 'Axe/Lynx', user_id: default.id, parent_id: unilever.id)
