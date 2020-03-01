@@ -23,6 +23,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   gem 'factory_bot'
+  gem 'faker'
   gem 'pry-byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails', '~> 4.0.0.beta'
   gem 'rubocop'
